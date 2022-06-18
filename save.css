@@ -1,0 +1,119 @@
+.container {    
+    display: grid;
+    height: 100%;
+    /* grid-template-columns: 1fr 2fr 1fr;  */
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-columns: 1fr 4fr; */
+    grid-template-rows: 50px auto 50px;
+    grid-template-rows: repeat(2, 50px);
+    /* grid-template: repeat(2, 50px) / repeat(3, 1fr); */
+    grid-gap: 3px;
+    grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "f f f f f f f f f f f f"
+        ;
+}
+
+.header {
+    /* grid-column-start: 1; */
+    /* start at 1st column line and end at 3rd */
+    grid-column: 1 / -1;
+    /* grid-column-end: 3; */
+}
+
+.menu {
+    /* grid-row: 1 / 3; */
+}
+
+.content {
+    grid-column: 2 / -1;
+}
+
+.footer {
+    /* grid-column: 1 / span 2; */
+    /* span across two columns */
+    grid-column: 1 / -1;
+    /* span till end */
+}
+
+
+/* fr - fraction unit  */
+/* Column - width */
+/* Rows - height */
+
+
+
+/* ============================== */
+
+
+
+.container {
+    display: grid;
+    height: 100%;
+    /* grid-template-columns: 1fr 2fr 1fr;  */
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-columns: 1fr 4fr; */
+    grid-template-rows: 50px auto 50px;
+    /* grid-template-rows: repeat(2, 50px); */
+    /* grid-template: repeat(2, 50px) / repeat(3, 1fr); */
+    grid-gap: 3px;
+    grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "f f f f f f f f f f f f"
+        ;
+}
+
+.header {
+    grid-area: h;
+}
+
+.menu {
+    grid-area: m;    
+}
+
+.content {
+    grid-area: c;    
+}
+
+.footer {
+    grid-area: f;    
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* grid-template-rows: repeat(2, 100px); */
+    grid-auto-rows: 100px;
+    grid-gap: 5px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* grid-template-rows: repeat(2, 100px); */
+    grid-auto-rows: 100px;
+    grid-gap: 5px;
+    /* grid-auto-flow: row;  default value*/
+    grid-auto-flow: dense; 
+    /*  Fill holes in grid */
+}
+
+.horizontal  {
+    /* grid-column: auto / span 2; */
+    grid-column: span 2; 
+    /* Same */
+}
+
+.vertical {
+    grid-row: span 2;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
